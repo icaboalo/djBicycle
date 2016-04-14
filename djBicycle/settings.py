@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     #apps
     'bicycle',
+
+    #API
+    'rest_framework',
 ]
 
 MIDDLEWARE_CLASSES = [
