@@ -17,8 +17,8 @@ class Bicycle(models.Model):
     year = models.CharField(max_length=4, choices=YEAR_CHOICES, blank=True)
 
     #--Geolocation
-    latitude = models.DecimalField(max_digits=12, decimal_places=10, blank=True)
-    longitude = models.DecimalField(max_digits=12, decimal_places=10, blank=True)
+    latitude = models.DecimalField(max_digits=15, decimal_places=10, blank=True)
+    longitude = models.DecimalField(max_digits=15, decimal_places=10, blank=True)
 
 
     def __str__(self):
