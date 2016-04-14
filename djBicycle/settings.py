@@ -83,8 +83,12 @@ WSGI_APPLICATION = 'djBicycle.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd88eo7rp78q52j',
+        'USER': 'btyvdgycnxqggu',
+        'PASSWORD': 'mMGBpMi7PwdcTdtjhDtsR5Z6Zm',
+        'HOST': 'ec2-54-163-254-231.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
