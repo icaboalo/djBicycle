@@ -6,3 +6,7 @@ from .serializers import *
 class BicycleView(generics.ListCreateAPIView):
     queryset = Bicycle.objects.all()
     serializer_class = DefaultBicycleSerializer
+
+class BicycleDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Bicycle.objects.all()
+    serializer_class = DefaultBicycleSerializer
