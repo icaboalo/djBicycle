@@ -6,4 +6,4 @@ from bicycle.models import *
 class DefaultBicycleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bicycle
-        fields = ['id', 'brand', 'model', 'track', 'color', 'year']
+        fields = ['id', 'brand', 'model', 'track', 'color', 'year', 'latitude', 'longitude']
