@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #apps
+    'bicycle',
+
+    #API
+    'rest_framework',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -77,8 +83,12 @@ WSGI_APPLICATION = 'djBicycle.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd88eo7rp78q52j',
+        'USER': 'btyvdgycnxqggu',
+        'PASSWORD': 'mMGBpMi7PwdcTdtjhDtsR5Z6Zm',
+        'HOST': 'ec2-54-163-254-231.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -101,6 +111,23 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+   'DEFAULT_AUTHENTICATION_CLASSES': (
+       'rest_framework.authentication.BasicAuthentication',
+       'rest_framework.authentication.SessionAuthentication',
+       'rest_framework.authentication.TokenAuthentication',
+   ),
+
+   'DEFAULT_PERMISSION_CLASSES': (
+       'rest_framework.permissions.IsAuthenticated',
+       'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+   ),
+   'DEFAULT_FILTER_BACKENDS': (
+       'rest_framework.filters.DjangoFilterBackend',
+   ),
+   'SEARCH_PARAM': 'q',
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
@@ -119,4 +146,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+#Whitenoise
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
